@@ -4,6 +4,7 @@ import Form from './Form'
 import {useParams, useSearchParams} from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BackToTopButton from './BackToTopButton'
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || ''
 const isAdmin = localStorage.getItem(process.env.REACT_APP_SECRET_KEY) === process.env.REACT_APP_SECRET_VALUE
@@ -79,6 +80,7 @@ const Render = () => {
             </div>)}
             {content && isAdmin && (<Form route={route} fields={fields} toast={toast} postRequest={postRequest} />)}
             <ToastContainer /> 
+            <BackToTopButton />
         </div>
     )
 }
