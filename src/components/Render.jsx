@@ -59,6 +59,7 @@ const Render = () => {
 
     return (
         <div className='flex flex-col gap-5 items-center justify-center min-h-screen'>
+            {content && isAdmin && (<Form route={route} fields={fields} toast={toast} postRequest={postRequest} />)}
             {content ? (
             <div className='flex flex-col p-5 mt-32 bg-white rounded-xl max-w-[80%] min-w-[80%] shadow-2xl border-2 border-black'>
                 <h2 className='text-primary text-2xl font-bold mb-3'>{route.toUpperCase()}</h2>
@@ -78,7 +79,6 @@ const Render = () => {
                 <div className='text-3xl font-bold text-primary'>
                 Loading {route}...
             </div>)}
-            {content && isAdmin && (<Form route={route} fields={fields} toast={toast} postRequest={postRequest} />)}
             <ToastContainer /> 
             <BackToTopButton />
         </div>

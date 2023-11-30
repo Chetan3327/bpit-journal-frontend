@@ -66,7 +66,6 @@ const CallForPapers = () => {
         <div id="cfp36">
         <header id="header">
           <h1 id="title">Call for Research Paper</h1>
-        <button className='p-2 px-4 border-1 bg-purple-500 text-white' onClick={(e) => navigate('/paper')}>Online Submission</button>
         </header>
         <div id="content">
           <p class="intro">
@@ -91,6 +90,8 @@ const CallForPapers = () => {
             published with an ISSN number.
           </p>
         </div>
+        <button className='p-2 px-4 border-1 bg-purple-500 text-white' onClick={(e) => navigate('/paper')}>Online Submission</button>
+
         <section id="domains">
           <h2>Domains to be covered:</h2>
           <ul>
