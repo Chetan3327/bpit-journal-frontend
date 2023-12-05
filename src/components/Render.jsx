@@ -13,8 +13,12 @@ const isAdmin =
 
 const Render = () => {
   const { route } = useParams() || "issues";
+  const isIssue = route === 'issues'
+  console.log(isIssue)
+  const [contentP, setContentP] = useState(null)
   const [content, setContent] = useState(null);
   const [fields, setFields] = useState(null);
+  const [years, setYears] = useState(null)
   const removeFields = ["__v", "_id"];
   useEffect(() => {
     console.log(`${BACKEND_URL}/${route}`);
@@ -22,7 +26,11 @@ const Render = () => {
       console.log(response.data[0]);
       console.log("data", response.data[0]);
       setContent(response.data);
+      setContentP(response.data)
       console.log("fields", Object.keys(response.data[0]));
+      const years = [...new Set(response.data.map((item) => item.Year))].sort()
+      setYears(years)
+      console.log(years)
       const allFields = Object.keys(response.data[0]);
       const reqFields = allFields.filter(
         (item) => !removeFields.includes(item)
@@ -30,6 +38,11 @@ const Render = () => {
       setFields(reqFields);
     });
   }, [route]);
+
+  const handleYearChange = (year) => {
+    const filteredContent = contentP.filter((item) => item.Year === year)
+    setContent(filteredContent)
+  }
 
   const postRequest = async (formData) => {
     axios
@@ -75,7 +88,16 @@ const Render = () => {
         />
       )}
       {content ? (
-        <div className="flex flex-col p-5 bg-white rounded-xl max-w-[80%] min-w-[80%] shadow-2xl border-2 border-black">
+        <div className="flex flex-col mt-32 p-5 bg-white rounded-xl max-w-[80%] min-w-[80%] shadow-2xl border-2 border-black">
+          
+          {content && isIssue && (
+            <div className="ml-10 flex gap-3">
+              <span className="px-4 p-2 bg-purple-500 cursor-pointer text-white" onClick={() => setContent(contentP)}>All</span>
+              {years.map((year, idx) => {
+                return <span className="px-4 p-2 bg-purple-500 cursor-pointer text-white" key={idx} onClick={() => handleYearChange(year)}>{year}</span>
+              })}
+            </div>
+          )}
           <h2 className="text-primary text-2xl font-bold mb-3 text-center">
             {route.toUpperCase()}
           </h2>
