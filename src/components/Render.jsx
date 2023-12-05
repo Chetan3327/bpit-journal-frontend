@@ -75,7 +75,7 @@ const Render = () => {
         />
       )}
       {content ? (
-        <div className="flex flex-col p-5 mt-32 bg-white rounded-xl max-w-[80%] min-w-[80%] shadow-2xl border-2 border-black">
+        <div className="flex flex-col p-5 bg-white rounded-xl max-w-[80%] min-w-[80%] shadow-2xl border-2 border-black">
           <h2 className="text-primary text-2xl font-bold mb-3 text-center">
             {route.toUpperCase()}
           </h2>
