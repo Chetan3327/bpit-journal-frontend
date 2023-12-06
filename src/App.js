@@ -18,8 +18,8 @@ const App = () => {
     <Router>
       <Nav />
       <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/home" element={<Home />} /> */}
         <Route path="/aim-scope" element={<AimScope />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/admin" element={<Admin />} />

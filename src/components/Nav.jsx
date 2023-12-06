@@ -24,7 +24,7 @@ const Nav = () => {
       <div className="flex flex-col max-w-screen-xl px-4 mx-auto lg:items-center lg:justify-between lg:flex-row lg:px-6">
         <div className="p-4 flex flex-row items-center justify-between">
           <Link
-            to="/home"
+            to="/"
             className="cursor-pointer text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"
           >
             <img
@@ -52,7 +52,7 @@ const Nav = () => {
           } lg:flex lg:justify-end lg:flex-row`}
         >
           <Link
-            to="/home"
+            to="/"
             className="cursor-pointer px-4 py-2 mt-2 text-sm font-semibold text-gray-900  rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 lg:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
           >
             Home

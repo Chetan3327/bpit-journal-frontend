@@ -14,12 +14,12 @@ const PaperTemplate = () => {
             <Link to={paper} download="Paper Template" target="_blank" rel="noreferrer">Download</Link>
             </button>
         </div>
-        <div className='mb-6 flex items-center gap-3'>
+        {/* <div className='mb-6 flex items-center gap-3'>
           <h2 className="text-xl  font-bold mb-2">You can download the CopyRight Form from here: </h2>
             <button className='p-2 px-4 border-1 bg-purple-500 text-white'>
             <Link to={copyRight} download="copy_right_form" target="_blank" rel="noreferrer">Download</Link>
             </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
